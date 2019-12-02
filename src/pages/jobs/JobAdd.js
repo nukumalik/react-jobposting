@@ -22,8 +22,9 @@ const JobAdd = props => {
 	}
 
 	const getCategories = async () => {
-		const result = await props.dispatch(allCategory())
-		setCategories(result.value.data)
+		// const result = await props.dispatch(allCategory())
+		// setCategories(result.value.data)
+		await await props.dispatch(allCategory())
 	}
 
 	if (!localStorage.getItem('Authorization')) {
@@ -50,8 +51,7 @@ const JobAdd = props => {
 							setTimeout(() => {
 								props.history.push('/')
 							}, 500)
-						}}
-					>
+						}}>
 						<div className="form-group">
 							<label>Name</label>
 							<input type="text" className="form-control" name="name" onChange={e => setName(e.target.value)} />
@@ -60,9 +60,9 @@ const JobAdd = props => {
 							<label>Category</label>
 							<select name="id_category" className="form-control" defaultValue="" onChange={e => setCategory(e.target.value)}>
 								<option value="">Select category</option>
-								{!categories
+								{!props.category.data
 									? ''
-									: categories.map((v, i) => (
+									: props.category.data.map((v, i) => (
 											<Fragment key={i.toString()}>
 												<option value={v.id}>{v.name}</option>
 											</Fragment>
@@ -106,7 +106,7 @@ const JobAdd = props => {
 
 const mapStateToProps = state => ({
 	company: state.company,
-	category: state.category
+	category: state.category,
 })
 
 export default connect(mapStateToProps)(JobAdd)
