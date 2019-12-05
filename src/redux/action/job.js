@@ -5,13 +5,7 @@ const URI = 'http://3.86.104.243:8001/api/v1/jobs/'
 export const allJob = (name, companies, orderby, page) => {
 	return {
 		type: 'ALL_JOB',
-		payload:
-			name || companies || orderby || page
-				? axios.get(
-						URI +
-							`?name=${name}&company=${companies}&orderby=${orderby}&page=${page}`,
-				  )
-				: axios.get(URI),
+		payload: name || companies || orderby || page ? axios.get(URI + `?name=${name}&company=${companies}&orderby=${orderby}&page=${page}`) : axios.get(URI),
 	}
 }
 
