@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URI = 'http://3.86.104.243:8001/api/v1/companies/'
+const URI = 'https://jobfindout.online/api/v1/companies/'
 
 export const allCompany = () => {
 	return {
