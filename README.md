@@ -2,7 +2,16 @@
 
 This is my personal project to pass bootcamp second and third task and this is front end for my github repesitory (restful-jobposting). This is open source and feel free to use and bought me.
 
+## Screenshots
+
+Home / Job List
 ![Job List](./SS/Jobfindout/React/JobList.png)
+
+Job Detail
+![Job List](./SS/Jobfindout/React/JobDetail.png)
+
+Edit
+![Job List](./SS/Jobfindout/React/JobUpdate.png)
 
 ## Prerequiste
 
